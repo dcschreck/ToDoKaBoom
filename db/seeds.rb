@@ -21,6 +21,12 @@ users = User.all
     )
 end
 
+old = Item.create!(
+    name: Faker::Seinfeld.character,
+    user: me,
+    created_at: Date.parse('23/07/2018')
+)
+
 10.times do
     Item.create!(
         name: Faker::Seinfeld.quote,
