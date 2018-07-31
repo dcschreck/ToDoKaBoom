@@ -5,6 +5,7 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         <%= item.name %>
+                        <%= "Created " + distance_of_time_in_words(Time.now, item.created_at, include_seconds: true) + " ago"  %>
                         <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
                     </h4>
                 </div>
