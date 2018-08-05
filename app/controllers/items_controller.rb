@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 
         if @item.save
           flash[:notice] = "To-Do has been saved."
-          redirect_to users_show_path
+          redirect_to root_path
         else
           flash.now[:alert] = "There was an issue saving your To-Do."
           render :new
@@ -25,10 +25,10 @@ class ItemsController < ApplicationController
 
         if @item.destroy
             flash[:notice] = "\"#{@item.name}\" was deleted sucessfully."
-            redirect_to users_show_path
+            redirect_to root_path
         else
             flash.now[:alert] = "There was an error deleting the Wiki."
-            render users_show_path
+            render root_path
         end
     end
 
